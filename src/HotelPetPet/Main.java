@@ -1,6 +1,7 @@
 package HotelPetPet;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,7 +9,17 @@ public class Main {
             Hotel hotel = new Hotel("Pet Hotel Feliz");
             
             Funcionario funcBanho = new Funcionario("João", "999.888.777-66", "Esteticista", 2000.0, 0.0);
-            Funcionario funcGeral = new Funcionario("Maria", "111.222.333-44", "Gerente", 3500.0, 0.0);
+            Funcionario funcTosa = new Funcionario("Maria", "111.222.333-44", "Tosador", 3500.0, 0.0);
+            Funcionario funcVet = new Funcionario("Graça", "890.345.678-43", "Veterinária", 4500.0, 0.0);
+            
+            Servico servicoBanhoDisponivel = new Servico("Banho", "Banho completo", 35.0, funcBanho);
+            Servico servicoTosaDisponivel = new Servico("Tosa", "Tosa higiênica", 50.0, funcTosa);
+            Servico servicoCrecheDisponivel = new Servico("Consulta", "Consulta de check-in com veterinário", 60.0, funcVet);
+
+            hotel.adicionarServicoDisponivel(servicoBanhoDisponivel);
+            hotel.adicionarServicoDisponivel(servicoTosaDisponivel);
+            hotel.adicionarServicoDisponivel(servicoCrecheDisponivel);
+
             
             // --- PRIMEIRA HOSPEDAGEM ---
             Tutor tutor1 = new Tutor("Ana", "123.456.789-00");
@@ -22,13 +33,11 @@ public class Main {
             cachorro1.setCooperativo(true);
             tutor1.adicionarPet(cachorro1);
 
-            LocalDate dataEntrada1 = LocalDate.of(2025, 10, 1);
+            LocalDate dataEntrada1 = LocalDate.of(2025, 10, 2);
             LocalDate dataSaida1 = LocalDate.of(2025, 10, 5);
             Hospedagem hospedagem1 = new Hospedagem(cachorro1, tutor1, dataEntrada1, dataSaida1);
-            hospedagem1.setValorDiaria(50.0);
+            hospedagem1.setValorDiaria(65.0);
 
-            Servico servicoBanho = new Servico("Banho", "Banho completo", 35.0, funcBanho);
-            hospedagem1.adicionarServico(servicoBanho);
 
             hotel.registrarHospedagem(hospedagem1);
 
@@ -36,6 +45,11 @@ public class Main {
             System.out.println(tutor1.getInfo());
             System.out.println("--------------------");
             System.out.println(cachorro1.getInfo());
+            System.out.println("--------------------");
+            System.out.println("Serviços Contratados:");
+            for (Servico s : hospedagem1.getServicosExtras()) {
+                System.out.println("- " + s.getDescricao() + " (R$" + s.getValor() + ")");
+            }
             System.out.println("--------------------");
             System.out.println("Dias de hospedagem: " + hospedagem1.getDias());
             System.out.println("Valor total: R$" + hospedagem1.calcularValorTotal());
@@ -47,31 +61,45 @@ public class Main {
             tutor2.setTelefone("41 99123-4567");
             tutor2.setEmail("joao@email.com");
             
-            Pet gato1 = new Gato("Miau", 2);
+            Pet gato1 = new Gato("Chicletinho", 2);
             gato1.setRaca("Persa");
             gato1.setDieta("Ração para gatos castrados");
             gato1.setVacinacao(true);
             gato1.setCooperativo(false);
             tutor2.adicionarPet(gato1);
 
-            LocalDate dataEntrada2 = LocalDate.of(2025, 11, 10);
-            LocalDate dataSaida2 = LocalDate.of(2025, 11, 20);
+            LocalDate dataEntrada2 = LocalDate.of(2025, 10, 2);
+            LocalDate dataSaida2 = LocalDate.of(2025, 10, 5);
             Hospedagem hospedagem2 = new Hospedagem(gato1, tutor2, dataEntrada2, dataSaida2);
-            hospedagem2.setValorDiaria(40.0);
+            hospedagem2.setValorDiaria(65.0);
             
-            Servico servicoTosa = new Servico("Tosa", "Tosa especial", 50.0, funcBanho);
-            hospedagem2.adicionarServico(servicoTosa);
+            hospedagem2.adicionarServico(servicoTosaDisponivel);
             
             hotel.registrarHospedagem(hospedagem2);
+
 
             System.out.println("--- DADOS DA SEGUNDA HOSPEDAGEM ---");
             System.out.println(tutor2.getInfo());
             System.out.println("--------------------");
             System.out.println(gato1.getInfo());
             System.out.println("--------------------");
+            System.out.println("Serviços Contratados:");
+            for (Servico s : hospedagem2.getServicosExtras()) {
+                System.out.println("- " + s.getDescricao() + " (R$" + s.getValor() + ")");
+            }
+            System.out.println("--------------------");
             System.out.println("Dias de hospedagem: " + hospedagem2.getDias());
             System.out.println("Valor total: R$" + hospedagem2.calcularValorTotal());
 
+            System.out.println("\n--- RESUMO DO HOTEL ---");
+            List<Hospedagem> hospedagensAtivas = hotel.getHospedagensAtivas();
+            System.out.println("Total de hospedagens ativas: " + hospedagensAtivas.size());
+         
+            System.out.println("\n--- SERVIÇOS DISPONÍVEIS ---");
+            List<Servico> servicos = hotel.getServicosDisponiveis();
+            for (Servico s : servicos) {
+                System.out.println("- " + s.getTipo() + ": R$" + s.getValor());
+            }
 
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
