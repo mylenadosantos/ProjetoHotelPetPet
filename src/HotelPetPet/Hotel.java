@@ -1,13 +1,17 @@
 package HotelPetPet;
 
 import java.time.LocalDate;
+// Importando as classes necessárias para Collections
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap; 
 
 public class Hotel {
     private String nome;
     private List<Hospedagem> hospedagensAtivas;
     private List<Servico> servicosDisponiveis;
+    private Map<String, Funcionario> funcionarios; 
     private String endereco;
     private String telefone;
 
@@ -15,6 +19,23 @@ public class Hotel {
         this.nome = nome;
         this.hospedagensAtivas = new ArrayList<>();
         this.servicosDisponiveis = new ArrayList<>();
+        this.funcionarios = new HashMap<>(); // Inicialização do Map
+    }
+
+    
+     //Adiciona um funcionário ao Map usando o CPF como chave.
+   
+    public void registrarFuncionario(Funcionario funcionario) {
+        if (funcionario != null && funcionario.getCpf() != null) {
+            this.funcionarios.put(funcionario.getCpf(), funcionario);
+        }
+    }
+
+    
+     //Busca um funcionário de forma rápida usando o Map (chave: CPF).
+  
+    public Funcionario getFuncionario(String cpf) {
+        return this.funcionarios.get(cpf);
     }
 
     public Hospedagem criarHospedagem(Pet pet, Tutor tutor, LocalDate dataEntrada, LocalDate dataSaida) {
