@@ -1,4 +1,4 @@
-package HotelPetPet;
+package Model;
 
 public class Servico {
     private String tipo;

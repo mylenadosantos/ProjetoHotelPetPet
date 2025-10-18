@@ -1,4 +1,4 @@
-package HotelPetPet;
+package Model;
 
 public interface ServicosAdd {
     void adicionarServico(Servico servico);

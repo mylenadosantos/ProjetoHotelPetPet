@@ -1,7 +1,16 @@
-package HotelPetPet;
+package Main;
 
 import java.time.LocalDate;
 import java.util.List;
+
+import Model.Cachorro;
+import Model.Funcionario;
+import Model.Gato;
+import Model.Hospedagem;
+import Model.Hotel;
+import Model.Pet;
+import Model.Servico;
+import Model.Tutor;
 
 public class Main {
     public static void main(String[] args) {

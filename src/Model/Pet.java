@@ -1,4 +1,4 @@
-package HotelPetPet;
+package Model;
 
 public abstract class Pet {
     private String nome;
