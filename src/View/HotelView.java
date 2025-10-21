@@ -9,7 +9,6 @@ import Model.Hospedagem;
 import Model.Servico; 
 
 
-
 public class HotelView {
     
     private Scanner scanner;
@@ -58,14 +57,17 @@ public class HotelView {
     }
 
    
+    // MÉTODO PEDIR DATA CORRIGIDO: Lança exceção para o Controller tratar
     public LocalDate pedirData(String mensagem) {
         System.out.print(mensagem + " (formato DD/MM/AAAA): ");
         String dataStr = scanner.nextLine();
         try {
+            // Se a data for válida, retorna.
             return LocalDate.parse(dataStr, DATE_FORMAT);
         } catch (Exception e) {
-            exibirErro("Formato de data inválido. Tente novamente.");
-            return null;
+            // Se falhar (formato errado), LANÇA A EXCEÇÃO.
+            // Isso permite que o Controller (que está usando try-catch) repita a pergunta.
+            throw new IllegalArgumentException("Formato de data inválido. Tente novamente.");
         }
     }
 

@@ -7,8 +7,13 @@ public abstract class Pessoa {
     private String email;
 
     public Pessoa(String nome, String cpf) {
+        String cpfLimpo = cpf.replace(".", "").replace("-", ""); 
+        if (cpfLimpo.length() != 11) {
+        throw new IllegalArgumentException("CPF inválido: deve conter 11 dígitos numéricos.");
+    }
+        
         this.nome = nome;
-        this.cpf = cpf;
+        this.cpf = cpfLimpo; 
     }
 
     public String getNome() {
