@@ -8,7 +8,7 @@ public abstract class Pet {
     private boolean vacinacao;
     private String dieta;
     private boolean cooperativo;
-    
+    private String remedios; 
 
     public Pet(String nome, int idade) {
         this.nome = nome;
@@ -65,6 +65,16 @@ public abstract class Pet {
 		this.cooperativo = cooperativo;
 	}
     
+  
+    public String getRemedios() {
+        return remedios;
+    }
+
+    public void setRemedios(String remedios) {
+        this.remedios = remedios;
+    }
+    // ------------------------------------------
+    
     public String getInfo() {
         String statusVacinacao = this.vacinacao ? "Sim" : "Não";
         String statusCooperativo = this.cooperativo ? "Sim" : "Não";
@@ -73,6 +83,7 @@ public abstract class Pet {
                "Idade: " + this.idade + "\n" +
                "Raça: " + this.raca + "\n" +
                "Dieta: " + this.dieta + "\n" +
+               "Remédios: " + this.remedios + "\n" + 
                "Vacinado: " + statusVacinacao + "\n" +
                "Cooperativo: " + statusCooperativo;
     }
