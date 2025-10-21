@@ -1,4 +1,4 @@
-package HotelPetPet;
+package Model;
 
 public class Gato extends Pet {
     public Gato(String nome, int idade) {

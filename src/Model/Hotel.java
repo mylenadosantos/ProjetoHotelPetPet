@@ -1,4 +1,4 @@
-package HotelPetPet;
+package Model;
 
 import java.time.LocalDate;
 // Importando as classes necessárias para Collections
