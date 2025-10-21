@@ -40,6 +40,5 @@ public abstract class Pessoa {
 		this.email = email;
 	}
     
-    // Método abstrato para obter informações
     public abstract String getInfo();
 }
