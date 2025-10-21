@@ -6,7 +6,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         try {
-            Hotel hotel = new Hotel("Pet Hotel Feliz");
+            Hotel hotel = new Hotel("Hotel PetPet");
             
             Funcionario funcBanho = new Funcionario("João", "999.888.777-66", "Esteticista", 2000.0, 0.0);
             Funcionario funcTosa = new Funcionario("Maria", "111.222.333-44", "Tosador", 3500.0, 0.0);
