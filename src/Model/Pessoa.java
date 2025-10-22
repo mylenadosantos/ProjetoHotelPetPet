@@ -7,10 +7,22 @@ public abstract class Pessoa {
     private String email;
 
     public Pessoa(String nome, String cpf) {
-        String cpfLimpo = cpf.replace(".", "").replace("-", ""); 
+        
+        
+        StringBuilder cpfDigitos = new StringBuilder(); 
+        
+        for (char c : cpf.toCharArray()) {
+            if (Character.isDigit(c)) {
+                cpfDigitos.append(c); 
+            }
+        }
+        
+        String cpfLimpo = cpfDigitos.toString();
+        
         if (cpfLimpo.length() != 11) {
-        throw new IllegalArgumentException("CPF inválido: deve conter 11 dígitos numéricos.");
-    }
+            throw new IllegalArgumentException("CPF inválido: deve conter 11 dígitos numéricos.");
+        }
+   
         
         this.nome = nome;
         this.cpf = cpfLimpo; 

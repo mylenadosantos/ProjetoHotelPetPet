@@ -23,9 +23,14 @@ public class HotelView {
         System.out.println("\n--- MENU PRINCIPAL ---");
         System.out.println("1. Registrar nova Hospedagem");
         System.out.println("2. Ver Hospedagens Ativas");
-        System.out.println("3. Sair");
+        System.out.println("3. Finalizar Hospedagem (Check-out)");
+        System.out.println("4. Adicionar Serviços Extras");
+        System.out.println("5. Editar/Atualizar Dados da Hospedagem");
+        System.out.println("6. Sair");
         System.out.print("Escolha uma opção: ");
-        try {
+        
+        // CORREÇÃO: Bloco try/catch restaurado
+        try { 
             int opcao = scanner.nextInt();
             scanner.nextLine(); 
             return opcao;
@@ -66,7 +71,6 @@ public class HotelView {
             return LocalDate.parse(dataStr, DATE_FORMAT);
         } catch (Exception e) {
             // Se falhar (formato errado), LANÇA A EXCEÇÃO.
-            // Isso permite que o Controller (que está usando try-catch) repita a pergunta.
             throw new IllegalArgumentException("Formato de data inválido. Tente novamente.");
         }
     }
