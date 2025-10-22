@@ -68,6 +68,12 @@ public class Hospedagem implements ServicosAdd {
     public LocalDate getDataSaida() {
         return dataSaida;
     }
+    
+    // NOVO MÉTODO (O SETTER QUE ESTAVA FALTANDO!)
+    public void setDataSaida(LocalDate dataSaida) {
+        this.dataSaida = dataSaida;
+    }
+    // ---------------------------------------------
 
     public double getValorDiaria() {
         return valorDiaria;

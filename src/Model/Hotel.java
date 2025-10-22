@@ -83,4 +83,21 @@ public class Hotel {
     public void registrarHospedagem(Hospedagem hospedagem) {
         this.hospedagensAtivas.add(hospedagem);
     }
+    public boolean finalizarHospedagem(int idHospedagem) {
+        Hospedagem hospedagemParaRemover = null;
+        // Percorre a lista para encontrar a hospedagem pelo ID
+        for (Hospedagem h : hospedagensAtivas) {
+            if (h.getId() == idHospedagem) {
+                hospedagemParaRemover = h;
+                break;
+            }
+        }
+        
+        if (hospedagemParaRemover != null) {
+            // Remove a hospedagem ativa
+            return hospedagensAtivas.remove(hospedagemParaRemover);
+            // Em um sistema real, aqui você moveria ela para uma lista de 'hospedagensFinalizadas'
+        }
+        return false;
+    }
 }
