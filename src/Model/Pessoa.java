@@ -1,5 +1,7 @@
 package Model;
 
+import Util.Logger; // Importa a classe Logger
+
 public abstract class Pessoa {
     private String nome;
     private String cpf;
@@ -11,6 +13,7 @@ public abstract class Pessoa {
         
         StringBuilder cpfDigitos = new StringBuilder(); 
         
+        // Remove caracteres não numéricos do CPF
         for (char c : cpf.toCharArray()) {
             if (Character.isDigit(c)) {
                 cpfDigitos.append(c); 
@@ -19,13 +22,18 @@ public abstract class Pessoa {
         
         String cpfLimpo = cpfDigitos.toString();
         
+        // Validação básica do CPF (apenas contagem de dígitos)
         if (cpfLimpo.length() != 11) {
+            // Log de Erro Crítico: Falha na validação do CPF
+            Logger.log("ERROR", "Tentativa de criar Pessoa com CPF inválido: " + cpf);
             throw new IllegalArgumentException("CPF inválido: deve conter 11 dígitos numéricos.");
         }
    
         
         this.nome = nome;
-        this.cpf = cpfLimpo; 
+        this.cpf = cpfLimpo;
+        // Log de Evento: Criação bem-sucedida
+        Logger.log("EVENT", "Pessoa criada com sucesso. Nome: " + nome + ", CPF: " + cpfLimpo);
     }
 
     public String getNome() {
@@ -36,21 +44,26 @@ public abstract class Pessoa {
         return cpf;
     }
 
-	public String getTelefone() {
-		return telefone;
-	}
+    public String getTelefone() {
+        return telefone;
+    }
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
+    /**
+     * Retorna uma string com informações detalhadas da pessoa.
+     * Deve ser implementado pelas subclasses (Tutor, Funcionario).
+     * @return String com as informações
+     */
     public abstract String getInfo();
 }
