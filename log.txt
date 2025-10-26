@@ -171,3 +171,137 @@
 [2025-10-24 19:44:43] [INFO] Opção de menu selecionada: 3
 [2025-10-24 19:44:49] [WARN] Tentativa de check-out com ID não encontrado: 6
 [2025-10-24 19:45:01] [EVENT] Check-out concluído para ID: 1. Pet: f
+[2025-10-24 22:09:37] [INFO] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-24 22:09:37] [INFO] Controller inicializado. Carregando dados iniciais.
+[2025-10-24 22:09:37] [EVENT] Pessoa criada com sucesso. Nome: João, CPF: 99988877766
+[2025-10-24 22:09:37] [EVENT] Pessoa criada com sucesso. Nome: Maria, CPF: 11122233344
+[2025-10-24 22:09:37] [EVENT] Pessoa criada com sucesso. Nome: Graça, CPF: 89034567843
+[2025-10-24 22:09:37] [EVENT] Pessoa criada com sucesso. Nome: Pedro, CPF: 44455566677
+[2025-10-24 22:09:37] [EVENT] Funcionário registrado: João
+[2025-10-24 22:09:37] [EVENT] Funcionário registrado: Maria
+[2025-10-24 22:09:37] [EVENT] Funcionário registrado: Graça
+[2025-10-24 22:09:37] [EVENT] Funcionário registrado: Pedro
+[2025-10-24 22:09:37] [INFO] Aplicação iniciada.
+[2025-10-24 22:09:41] [INFO] Opção de menu selecionada: 1
+[2025-10-24 22:09:48] [EVENT] Pessoa criada com sucesso. Nome: mylena, CPF: 12432317939
+[2025-10-24 22:09:48] [USER] Dados do Tutor coletados com sucesso.
+[2025-10-24 22:10:02] [ERROR] Tentativa de criar Pet com idade inválida: 0
+[2025-10-24 22:10:25] [INFO] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-24 22:10:25] [INFO] Controller inicializado. Carregando dados iniciais.
+[2025-10-24 22:10:25] [EVENT] Pessoa criada com sucesso. Nome: João, CPF: 99988877766
+[2025-10-24 22:10:25] [EVENT] Pessoa criada com sucesso. Nome: Maria, CPF: 11122233344
+[2025-10-24 22:10:25] [EVENT] Pessoa criada com sucesso. Nome: Graça, CPF: 89034567843
+[2025-10-24 22:10:25] [EVENT] Pessoa criada com sucesso. Nome: Pedro, CPF: 44455566677
+[2025-10-24 22:10:25] [EVENT] Funcionário registrado: João
+[2025-10-24 22:10:25] [EVENT] Funcionário registrado: Maria
+[2025-10-24 22:10:25] [EVENT] Funcionário registrado: Graça
+[2025-10-24 22:10:25] [EVENT] Funcionário registrado: Pedro
+[2025-10-24 22:10:25] [INFO] Aplicação iniciada.
+[2025-10-24 22:10:31] [INFO] Opção de menu selecionada: 1
+[2025-10-24 22:10:40] [EVENT] Pessoa criada com sucesso. Nome: mylena, CPF: 12432317939
+[2025-10-24 22:10:40] [USER] Dados do Tutor coletados com sucesso.
+[2025-10-24 22:11:15] [USER] Dados do Pet coletados. Nome: thor, Tipo: Cachorro
+[2025-10-24 22:11:25] [USER] Data de entrada inserida: 2025-10-25
+[2025-10-24 22:11:29] [USER] Data de saída inserida: 2025-10-26
+[2025-10-24 22:11:29] [EVENT] Nova hospedagem criada. Pet: thor, Tutor: mylena
+[2025-10-24 22:11:29] [INFO] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-24 22:11:32] [USER] Serviço adicionado à ID 1: Consulta
+[2025-10-24 22:11:44] [INFO] Opção de menu selecionada: 3
+[2025-10-24 22:11:50] [EVENT] Check-out concluído para ID: 1. Pet: thor
+[2025-10-24 22:11:53] [INFO] Opção de menu selecionada: 1
+[2025-10-24 22:12:00] [EVENT] Pessoa criada com sucesso. Nome: eli, CPF: 12345678980
+[2025-10-24 22:12:00] [USER] Dados do Tutor coletados com sucesso.
+[2025-10-24 22:12:06] [WARN] Idade negativa inserida para Pet: -1
+[2025-10-24 22:15:21] [ERROR] Tentativa de criar Pet com idade inválida: 0
+[2025-10-26 10:57:57] [INFO] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 10:57:57] [INFO] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 10:57:57] [EVENT] Pessoa criada com sucesso. Nome: João, CPF: 99988877766
+[2025-10-26 10:57:57] [EVENT] Pessoa criada com sucesso. Nome: Maria, CPF: 11122233344
+[2025-10-26 10:57:57] [EVENT] Pessoa criada com sucesso. Nome: Graça, CPF: 89034567843
+[2025-10-26 10:57:57] [EVENT] Pessoa criada com sucesso. Nome: Pedro, CPF: 44455566677
+[2025-10-26 10:57:57] [EVENT] Funcionário registrado: João
+[2025-10-26 10:57:57] [EVENT] Funcionário registrado: Maria
+[2025-10-26 10:57:57] [EVENT] Funcionário registrado: Graça
+[2025-10-26 10:57:57] [EVENT] Funcionário registrado: Pedro
+[2025-10-26 10:57:57] [INFO] Aplicação iniciada.
+[2025-10-26 10:58:07] [INFO] Opção de menu selecionada: 1
+[2025-10-26 10:58:22] [EVENT] Pessoa criada com sucesso. Nome: julia, CPF: 02546587452
+[2025-10-26 10:58:22] [USER] Dados do Tutor coletados com sucesso.
+[2025-10-26 10:58:31] [WARN] Opção de Pet inválida inserida: 5
+[2025-10-26 10:58:54] [USER] Dados do Pet coletados. Nome: peppa pig, Tipo: Cachorro
+[2025-10-26 10:59:03] [WARN] Formato de data inválido para entrada.
+[2025-10-26 10:59:09] [USER] Data de entrada inserida: 2025-10-28
+[2025-10-26 10:59:13] [USER] Data de saída inserida: 2025-10-30
+[2025-10-26 10:59:13] [EVENT] Nova hospedagem criada. Pet: peppa pig, Tutor: julia
+[2025-10-26 10:59:13] [INFO] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 10:59:15] [WARN] Opção de serviço inválida: 8
+[2025-10-26 10:59:18] [USER] Serviço adicionado à ID 1: Passeio
+[2025-10-26 10:59:19] [USER] Serviço adicionado à ID 1: Consulta
+[2025-10-26 10:59:32] [INFO] Opção de menu selecionada: 3
+[2025-10-26 10:59:39] [EVENT] Check-out concluído para ID: 1. Pet: peppa pig
+[2025-10-26 10:59:56] [INFO] Opção de menu selecionada: 1
+[2025-10-26 11:00:03] [ERROR] Tentativa de criar Pessoa com CPF inválido: 1256458530
+[2025-10-26 11:00:03] [WARN] Falha na criação de Tutor: CPF inválido: deve conter 11 dígitos numéricos.
+[2025-10-26 11:00:08] [EVENT] Pessoa criada com sucesso. Nome: eli, CPF: 12356215820
+[2025-10-26 11:00:08] [USER] Dados do Tutor coletados com sucesso.
+[2025-10-26 11:00:26] [USER] Dados do Pet coletados. Nome: hina, Tipo: Gato
+[2025-10-26 11:00:31] [USER] Data de entrada inserida: 2025-10-28
+[2025-10-26 11:00:35] [USER] Data de saída inserida: 2025-10-30
+[2025-10-26 11:00:35] [EVENT] Nova hospedagem criada. Pet: hina, Tutor: eli
+[2025-10-26 11:00:35] [INFO] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 11:00:42] [INFO] Opção de menu selecionada: 1
+[2025-10-26 11:00:56] [EVENT] Pessoa criada com sucesso. Nome: 6, CPF: 23512645890
+[2025-10-26 11:00:56] [USER] Dados do Tutor coletados com sucesso.
+[2025-10-26 11:01:17] [USER] Dados do Pet coletados. Nome: n sei, Tipo: Cachorro
+[2025-10-26 11:01:26] [USER] Data de entrada inserida: 2025-10-28
+[2025-10-26 11:01:30] [USER] Data de saída inserida: 2025-10-30
+[2025-10-26 11:01:30] [EVENT] Nova hospedagem criada. Pet: n sei, Tutor: 6
+[2025-10-26 11:01:30] [INFO] Nova Hospedagem ID 2 inicializada com diária R$65.0.
+[2025-10-26 11:01:40] [INFO] Opção de menu selecionada: 5
+[2025-10-26 11:01:48] [INFO] Submenu Edição ID 2 - Opção: 2
+[2025-10-26 11:02:15] [EVENT] Dados do Pet atualizados. Nome: n sei, Nova Raça: chow chow
+[2025-10-26 11:02:20] [INFO] Submenu Edição ID 2 - Opção: 0
+[2025-10-26 11:02:23] [INFO] Opção de menu selecionada: 6
+[2025-10-26 11:02:23] [INFO] Aplicação encerrada.
+[2025-10-26 11:05:31] [INFO] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 11:05:31] [INFO] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 11:05:31] [EVENT] Pessoa criada com sucesso. Nome: João, CPF: 99988877766
+[2025-10-26 11:05:31] [EVENT] Pessoa criada com sucesso. Nome: Maria, CPF: 11122233344
+[2025-10-26 11:05:31] [EVENT] Pessoa criada com sucesso. Nome: Graça, CPF: 89034567843
+[2025-10-26 11:05:31] [EVENT] Pessoa criada com sucesso. Nome: Pedro, CPF: 44455566677
+[2025-10-26 11:05:31] [EVENT] Funcionário registrado: João
+[2025-10-26 11:05:31] [EVENT] Funcionário registrado: Maria
+[2025-10-26 11:05:31] [EVENT] Funcionário registrado: Graça
+[2025-10-26 11:05:31] [EVENT] Funcionário registrado: Pedro
+[2025-10-26 11:05:31] [INFO] Aplicação iniciada.
+[2025-10-26 11:05:41] [INFO] Opção de menu selecionada: 1
+[2025-10-26 11:05:48] [EVENT] Pessoa criada com sucesso. Nome: Maria, CPF: 03117131906
+[2025-10-26 11:05:48] [USER] Dados do Tutor coletados com sucesso.
+[2025-10-26 11:05:57] [WARN] Idade negativa inserida para Pet: -1
+[2025-10-26 11:06:29] [USER] Dados do Pet coletados. Nome: Thor, Tipo: Cachorro
+[2025-10-26 11:06:33] [USER] Data de entrada inserida: 2025-10-28
+[2025-10-26 11:06:36] [WARN] Formato de data inválido para saída.
+[2025-10-26 11:06:43] [USER] Data de saída inserida: 2025-10-30
+[2025-10-26 11:06:43] [EVENT] Nova hospedagem criada. Pet: Thor, Tutor: Maria
+[2025-10-26 11:06:43] [INFO] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 11:06:49] [INFO] Opção de menu selecionada: 6
+[2025-10-26 11:06:49] [INFO] Aplicação encerrada.
+[2025-10-26 11:07:58] [INFO] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 11:07:58] [INFO] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 11:07:58] [EVENT] Pessoa criada com sucesso. Nome: João, CPF: 99988877766
+[2025-10-26 11:07:58] [EVENT] Pessoa criada com sucesso. Nome: Maria, CPF: 11122233344
+[2025-10-26 11:07:58] [EVENT] Pessoa criada com sucesso. Nome: Graça, CPF: 89034567843
+[2025-10-26 11:07:58] [EVENT] Pessoa criada com sucesso. Nome: Pedro, CPF: 44455566677
+[2025-10-26 11:07:58] [EVENT] Funcionário registrado: João
+[2025-10-26 11:07:58] [EVENT] Funcionário registrado: Maria
+[2025-10-26 11:07:58] [EVENT] Funcionário registrado: Graça
+[2025-10-26 11:07:58] [EVENT] Funcionário registrado: Pedro
+[2025-10-26 11:07:58] [INFO] Aplicação iniciada.
+[2025-10-26 11:08:02] [INFO] Opção de menu selecionada: 1
+[2025-10-26 11:08:08] [EVENT] Pessoa criada com sucesso. Nome: Mylena, CPF: 12432317939
+[2025-10-26 11:08:08] [USER] Dados do Tutor coletados com sucesso.
+[2025-10-26 11:08:30] [USER] Dados do Pet coletados. Nome: Peppa Pig, Tipo: Cachorro
+[2025-10-26 11:08:34] [USER] Data de entrada inserida: 2025-10-28
+[2025-10-26 11:08:38] [USER] Data de saída inserida: 2025-10-30
+[2025-10-26 11:08:38] [EVENT] Nova hospedagem criada. Pet: Peppa Pig, Tutor: Mylena
+[2025-10-26 11:08:38] [INFO] Nova Hospedagem ID 1 inicializada com diária R$65.0.
