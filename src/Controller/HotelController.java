@@ -2,7 +2,7 @@ package Controller;
 
 import Model.*; 
 import View.HotelView; 
-import Util.Logger; // Importar a classe Logger
+import Util.Logger; 
 import java.time.LocalDate;
 
 public class HotelController {
@@ -14,7 +14,7 @@ public class HotelController {
         this.view = view;
    
         // Log: Inicialização do Controller
-        Logger.log("INFO", "Controller inicializado. Carregando dados iniciais.");
+        Logger.log("INFO", "Controller inicializado. Carregando dados iniciais."); //
    
         // Inicializa o catálogo de serviços e funcionários
         Funcionario funcBanho = new Funcionario("João", "99988877766", "Esteticista", 2000.0, 0.0);
@@ -88,15 +88,15 @@ public class HotelController {
     private void registrarNovaHospedagem() {
         this.view.exibirMensagem("\n--- REGISTRAR NOVA HOSPEDAGEM ---");
 
-        // 1. Coleta e VALIDAÇÃO do Tutor (CPF isolado)
+        // 1. Coleta e VALIDAÇÃO do Tutor (Nome e CPF)
         String nomeTutor = this.view.pedirString("Nome do Tutor: "); 
         Tutor tutor = null;
         
         while (tutor == null) { 
             try {
                 String cpfTutor = this.view.pedirString("CPF do Tutor (apenas números, 11 dígitos): ");
-                tutor = new Tutor(nomeTutor, cpfTutor); // O MODELO (Pessoa/Tutor) já loga sucesso ou falha
-                Logger.log("USER", "Dados do Tutor coletados com sucesso.");
+                tutor = new Tutor(nomeTutor, cpfTutor); // O MODELO (Pessoa/Tutor) já valida o CPF
+                Logger.log("USER", "Nome e CPF do Tutor coletados com sucesso.");
                 
             } catch (IllegalArgumentException e) { 
                 this.view.exibirErro(e.getMessage()); 
@@ -105,25 +105,63 @@ public class HotelController {
             }
         }
 
-
-        // 2. Coleta de dados do Pet (COM TRATAMENTO DE ERRO DE NÚMERO)
-        String nomePet = this.view.pedirString("Nome do Pet: ");
-        int idadePet = -1;
-        
-        while (idadePet < 0) { 
+        // Loop de validação para Telefone
+        boolean telefoneValido = false;
+        do {
+            String telefoneTutor = this.view.pedirString("Telefone do Tutor (11 dígitos, ex: 11987654321): ");
             try {
-                idadePet = this.view.pedirInteiro("Idade do Pet: ");
-                if (idadePet < 0) {
-                    this.view.exibirErro("A idade não pode ser negativa.");
-                    Logger.log("WARN", "Idade negativa inserida para Pet: " + idadePet); // Log: Idade negativa
-                    idadePet = -1;
-                }
-            } catch (IllegalArgumentException e) { 
+                tutor.setTelefone(telefoneTutor); // Tenta validar o telefone (lógica está em Pessoa.java)
+                telefoneValido = true; // Se não lançou exceção, é válido
+                Logger.log("USER", "Telefone do Tutor validado.");
+            } catch (IllegalArgumentException e) {
                 this.view.exibirErro(e.getMessage());
-                Logger.log("WARN", "Input inválido (não-numérico) para idade do Pet."); // Log: Input não numérico
-                idadePet = -1;
+                Logger.log("WARN", "Tentativa de Telefone inválido: " + telefoneTutor + " | Erro: " + e.getMessage());
+            }
+        } while (!telefoneValido);
+
+        // Loop de validação para Email
+        boolean emailValido = false;
+        do {
+            String emailTutor = this.view.pedirString("Email do Tutor (formato nome@dominio.com): ");
+            try {
+                tutor.setEmail(emailTutor); // Tenta validar o email (lógica está em Pessoa.java)
+                emailValido = true; // Se não lançou exceção, é válido
+                Logger.log("USER", "Email do Tutor validado.");
+            } catch (IllegalArgumentException e) {
+                this.view.exibirErro(e.getMessage());
+                Logger.log("WARN", "Tentativa de Email inválido: " + emailTutor + " | Erro: " + e.getMessage());
+            }
+        } while (!emailValido);
+
+
+        // 2. Coleta de dados do Pet (CORREÇÃO DA VALIDAÇÃO DE IDADE)
+        String nomePet = this.view.pedirString("Nome do Pet: ");
+        boolean idadeValida = false;
+        int idadePet = 0;
+
+        while (!idadeValida) {
+            try {
+                idadePet = this.view.pedirInteiro("Idade do Pet (apenas números inteiros): ");
+                
+                // só entra aqui se o input for numérico
+                if (idadePet < 0) {
+                    this.view.exibirErro("A idade do Pet não pode ser um número negativo.");
+                    Logger.log("WARN", "Idade negativa inserida para Pet: " + idadePet);
+                } else {
+                    idadeValida = true;
+                    Logger.log("USER", "Idade do Pet inserida: " + idadePet);
+                }
+
+            } catch (IllegalArgumentException e) {
+                // Se o usuário digitar "dez", vem pra cá
+                this.view.exibirErro("Entrada inválida. Por favor, digite um número inteiro.");
+                Logger.log("WARN", "Input inválido (não-numérico) para idade do Pet.");
+                
+                // pula o resto do loop e pede de novo
+                continue;
             }
         }
+
         
         int tipoPetOpcao = -1;
         
@@ -259,7 +297,7 @@ public class HotelController {
     }
 
     // =========================================================================
-    // MÉTODO AUXILIAR REQUERIDO PELO MENU (exibirHospedagensAtivas)
+    // MÉTODOS AUXILIARES
     // =========================================================================
     private void exibirHospedagensAtivas() {
         if (this.hotel.getHospedagensAtivas().isEmpty()) {
@@ -380,7 +418,6 @@ public class HotelController {
 
                     if (sucesso) {
                         this.view.exibirMensagem("\n--- CHECK-OUT CONCLUÍDO ---");
-                        // O MODELO JÁ LOGA O EVENTO
                     }
                     
                 } else {
@@ -480,12 +517,38 @@ public class HotelController {
     // Sub-método para editar dados do Tutor
     private void editarTutor(Tutor tutor) {
         this.view.exibirMensagem("\n--- EDITANDO TUTOR: " + tutor.getNome() + " ---");
-        String novoTelefone = this.view.pedirString("Novo Telefone (" + (tutor.getTelefone() == null ? "vazio" : tutor.getTelefone()) + "): ");
-        String novoEmail = this.view.pedirString("Novo E-mail (" + (tutor.getEmail() == null ? "vazio" : tutor.getEmail()) + "): ");
-        tutor.setTelefone(novoTelefone);
-        tutor.setEmail(novoEmail);
-        this.view.exibirMensagem("Dados do Tutor atualizados.");
-        Logger.log("EVENT", "Dados do Tutor atualizados. CPF: " + tutor.getCpf() + ", Novo Email: " + novoEmail); // Log: Atualização
+        
+        // Edição e validação do Telefone
+        boolean telefoneValido = false;
+        String novoTelefone = tutor.getTelefone(); 
+        do {
+            novoTelefone = this.view.pedirString("Novo Telefone (Atual: " + (tutor.getTelefone() == null ? "vazio" : tutor.getTelefone()) + "): ");
+            try {
+                tutor.setTelefone(novoTelefone);
+                telefoneValido = true;
+                Logger.log("USER", "Telefone do Tutor atualizado. CPF: " + tutor.getCpf());
+            } catch (IllegalArgumentException e) {
+                this.view.exibirErro("Falha ao atualizar telefone: " + e.getMessage());
+                Logger.log("WARN", "Tentativa de Telefone inválido na edição: " + novoTelefone + " | Erro: " + e.getMessage());
+            }
+        } while (!telefoneValido);
+
+        // Edição e validação do Email
+        boolean emailValido = false;
+        String novoEmail = tutor.getEmail(); 
+        do {
+            novoEmail = this.view.pedirString("Novo E-mail (Atual: " + (tutor.getEmail() == null ? "vazio" : tutor.getEmail()) + "): ");
+            try {
+                tutor.setEmail(novoEmail);
+                emailValido = true;
+                Logger.log("USER", "Email do Tutor atualizado. CPF: " + tutor.getCpf());
+            } catch (IllegalArgumentException e) {
+                this.view.exibirErro("Falha ao atualizar email: " + e.getMessage());
+                Logger.log("WARN", "Tentativa de Email inválido na edição: " + novoEmail + " | Erro: " + e.getMessage());
+            }
+        } while (!emailValido);
+        
+        this.view.exibirMensagem("Dados do Tutor atualizados com sucesso!");
     }
     
     // Sub-método para editar dados do Pet
@@ -494,7 +557,7 @@ public class HotelController {
         String novaRaca = this.view.pedirString("Nova Raça (" + pet.getRaca() + "): ");
         pet.setRaca(novaRaca);
         
-        // ... Lógica de Dieta e Remédios omitida por brevidade...
+        // ... Lógica de Dieta e Remédios ...
         String temDieta = this.view.pedirString("Pet possui Dieta Específica (s/n)? ").toLowerCase();
         if (temDieta.equals("s")) {
             pet.setDieta(this.view.pedirString("Descreva a Nova Dieta: "));
@@ -509,7 +572,7 @@ public class HotelController {
             pet.setRemedios("Nenhum");
         }
         this.view.exibirMensagem("Dados do Pet atualizados.");
-        Logger.log("EVENT", "Dados do Pet atualizados. Nome: " + pet.getNome() + ", Nova Raça: " + novaRaca); // Log: Atualização
+        Logger.log("EVENT", "Dados do Pet atualizados. Nome: " + pet.getNome() + ", Nova Raça: " + novaRaca); 
     }
     
     // Sub-método para alterar a Data de Saída

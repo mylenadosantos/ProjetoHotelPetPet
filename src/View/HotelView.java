@@ -47,19 +47,21 @@ public class HotelView {
         return scanner.nextLine();
     }
     
-  
+    // Mostra a mensagem pro usuário no console (ex: "Digite a idade:")
     public int pedirInteiro(String mensagem) {
         System.out.print(mensagem);
         try {
+        	// Tenta ler o número digitado pelo usuário
             int valor = scanner.nextInt();
             scanner.nextLine();
             return valor;
         } catch (InputMismatchException e) {
-            scanner.nextLine(); 
-            exibirErro("Entrada inválida. Por favor, digite um número inteiro.");
-            return -1;
+            scanner.nextLine();
+         // Lança um erro dizendo que o que ele digitou não é um número inteiro
+            throw new IllegalArgumentException("Entrada inválida. Por favor, digite um número inteiro.");
         }
     }
+
 
    
     // MÉTODO PEDIR DATA CORRIGIDO: Lança exceção para o Controller tratar
