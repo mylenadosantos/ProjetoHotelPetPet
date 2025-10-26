@@ -305,3 +305,325 @@
 [2025-10-26 11:08:38] [USER] Data de saída inserida: 2025-10-30
 [2025-10-26 11:08:38] [EVENT] Nova hospedagem criada. Pet: Peppa Pig, Tutor: Mylena
 [2025-10-26 11:08:38] [INFO] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 14:43:35] [INFO] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 14:43:36] [INFO] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 14:43:36] [EVENT] Pessoa criada com sucesso. Nome: João, CPF: 99988877766
+[2025-10-26 14:43:36] [EVENT] Pessoa criada com sucesso. Nome: Maria, CPF: 11122233344
+[2025-10-26 14:43:36] [EVENT] Pessoa criada com sucesso. Nome: Graça, CPF: 89034567843
+[2025-10-26 14:43:36] [EVENT] Pessoa criada com sucesso. Nome: Pedro, CPF: 44455566677
+[2025-10-26 14:43:36] [EVENT] Funcionário registrado: João
+[2025-10-26 14:43:36] [EVENT] Funcionário registrado: Maria
+[2025-10-26 14:43:36] [EVENT] Funcionário registrado: Graça
+[2025-10-26 14:43:36] [EVENT] Funcionário registrado: Pedro
+[2025-10-26 14:43:36] [INFO] Aplicação iniciada.
+[2025-10-26 14:43:40] [INFO] Opção de menu selecionada: 1
+[2025-10-26 14:43:51] [ERROR] Tentativa de criar Pessoa com CPF inválido: 12532812
+[2025-10-26 14:43:51] [WARN] Falha na criação de Tutor: CPF inválido: deve conter 11 dígitos numéricos.
+[2025-10-26 14:43:57] [EVENT] Pessoa criada com sucesso. Nome: Evelyn, CPF: 12345895402
+[2025-10-26 14:43:57] [USER] Dados do Tutor coletados com sucesso.
+[2025-10-26 14:44:04] [WARN] Idade negativa inserida para Pet: -1
+[2025-10-26 14:44:10] [WARN] Idade negativa inserida para Pet: -1
+[2025-10-26 14:44:27] [WARN] Opção de Pet inválida inserida: 8
+[2025-10-26 14:44:58] [USER] Dados do Pet coletados. Nome: Thor, Tipo: Cachorro
+[2025-10-26 14:45:03] [WARN] Formato de data inválido para entrada.
+[2025-10-26 14:45:11] [USER] Data de entrada inserida: 2025-10-28
+[2025-10-26 14:45:23] [USER] Data de saída inserida: 2025-10-27
+[2025-10-26 14:45:23] [WARN] Datas inválidas: Saída não é posterior à entrada.
+[2025-10-26 14:45:29] [USER] Data de entrada inserida: 2025-10-28
+[2025-10-26 14:45:35] [USER] Data de saída inserida: 2025-10-30
+[2025-10-26 14:45:35] [EVENT] Nova hospedagem criada. Pet: Thor, Tutor: Evelyn
+[2025-10-26 14:45:35] [INFO] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 14:45:39] [USER] Serviço adicionado à ID 1: Banho
+[2025-10-26 14:45:41] [WARN] Opção de serviço inválida: 6
+[2025-10-26 14:48:02] [INFO] Opção de menu selecionada: 2
+[2025-10-26 14:48:08] [INFO] Opção de menu selecionada: 5
+[2025-10-26 14:48:16] [INFO] Submenu Edição ID 1 - Opção: 1
+[2025-10-26 14:48:45] [EVENT] Dados do Tutor atualizados. CPF: 12345895402, Novo Email: mylena@santos651@gmail.com
+[2025-10-26 14:49:15] [INFO] Submenu Edição ID 1 - Opção: 2
+[2025-10-26 14:49:25] [EVENT] Dados do Pet atualizados. Nome: Thor, Nova Raça: Poodle
+[2025-10-26 14:49:28] [INFO] Submenu Edição ID 1 - Opção: 0
+[2025-10-26 14:49:45] [INFO] Opção de menu selecionada: 3
+[2025-10-26 14:49:47] [EVENT] Check-out concluído para ID: 1. Pet: Thor
+[2025-10-26 14:49:53] [INFO] Opção de menu selecionada: 6
+[2025-10-26 14:49:53] [INFO] Aplicação encerrada.
+[2025-10-26 15:27:10] Aplicação Hotel PetPet iniciada.
+[2025-10-26 15:27:10] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 15:27:10] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 15:27:10] Pessoa criada com sucesso. Nome: João, CPF: 99988877766
+[2025-10-26 15:27:10] Pessoa criada com sucesso. Nome: Maria, CPF: 11122233344
+[2025-10-26 15:27:10] Pessoa criada com sucesso. Nome: Graça, CPF: 89034567843
+[2025-10-26 15:27:10] Pessoa criada com sucesso. Nome: Pedro, CPF: 44455566677
+[2025-10-26 15:27:10] Funcionário registrado: João
+[2025-10-26 15:27:10] Funcionário registrado: Maria
+[2025-10-26 15:27:10] Funcionário registrado: Graça
+[2025-10-26 15:27:10] Funcionário registrado: Pedro
+[2025-10-26 15:27:10] Aplicação iniciada.
+[2025-10-26 15:27:14] Opção de menu selecionada: 1
+[2025-10-26 15:27:22] Tentativa de criar Pessoa com CPF inválido: 125
+[2025-10-26 15:27:22] Falha na criação de Tutor: CPF inválido: deve conter 11 dígitos numéricos.
+[2025-10-26 15:27:27] Pessoa criada com sucesso. Nome: Evelyn, CPF: 12536513525
+[2025-10-26 15:27:27] Dados do Tutor coletados com sucesso.
+[2025-10-26 15:27:38] Opção de Pet inválida inserida: 8
+[2025-10-26 15:27:59] Dados do Pet coletados. Nome: Thor, Tipo: Cachorro
+[2025-10-26 15:28:00] Formato de data inválido para entrada.
+[2025-10-26 15:28:07] Data de entrada inserida: 2025-10-25
+[2025-10-26 15:28:12] Data de saída inserida: 2025-10-24
+[2025-10-26 15:28:12] Datas inválidas: Saída não é posterior à entrada.
+[2025-10-26 15:28:17] Data de entrada inserida: 2025-10-25
+[2025-10-26 15:28:22] Data de saída inserida: 2025-10-28
+[2025-10-26 15:28:22] Nova hospedagem criada. Pet: Thor, Tutor: Evelyn
+[2025-10-26 15:28:22] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 15:28:26] Serviço adicionado à ID 1: Consulta
+[2025-10-26 15:28:27] Opção de serviço inválida: 6
+[2025-10-26 15:28:33] Opção de menu selecionada: 3
+[2025-10-26 15:28:34] Check-out concluído para ID: 1. Pet: Thor
+[2025-10-26 15:28:37] Opção de menu selecionada: 6
+[2025-10-26 15:28:37] Aplicação encerrada.
+[2025-10-26 15:28:37] Aplicação encerrada.
+[2025-10-26 15:44:09] Aplicação Hotel PetPet iniciada.
+[2025-10-26 15:44:09] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 15:44:09] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 15:44:09] Funcionário registrado: João
+[2025-10-26 15:44:09] Funcionário registrado: Maria
+[2025-10-26 15:44:09] Funcionário registrado: Graça
+[2025-10-26 15:44:09] Funcionário registrado: Pedro
+[2025-10-26 15:44:09] Aplicação iniciada.
+[2025-10-26 15:44:15] Opção de menu selecionada: 1
+[2025-10-26 15:44:21] Falha na criação de Tutor: CPF inválido: deve conter 11 dígitos numéricos.
+[2025-10-26 15:44:25] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 15:44:29] Tentativa de Telefone inválido: 419 | Erro: Telefone inválido: deve conter exatamente 11 dígitos numéricos (com DDD).
+[2025-10-26 15:44:37] Telefone do Tutor validado.
+[2025-10-26 15:44:40] Tentativa de Email inválido: myl | Erro: E-mail inválido: utilize o formato padrao (ex: nome@dominio.com).
+[2025-10-26 15:44:50] Email do Tutor validado.
+[2025-10-26 15:45:03] Idade negativa inserida para Pet: -2
+[2025-10-26 15:45:09] Opção de Pet inválida inserida: 5
+[2025-10-26 15:45:34] Dados do Pet coletados. Nome: Peppa Pig, Tipo: Cachorro
+[2025-10-26 15:45:45] Formato de data inválido para entrada.
+[2025-10-26 15:45:50] Data de entrada inserida: 2025-10-28
+[2025-10-26 15:45:56] Data de saída inserida: 2025-10-27
+[2025-10-26 15:45:56] Datas inválidas: Saída não é posterior à entrada.
+[2025-10-26 15:46:01] Data de entrada inserida: 2025-10-28
+[2025-10-26 15:46:05] Data de saída inserida: 2025-10-30
+[2025-10-26 15:46:05] Nova hospedagem criada. Pet: Peppa Pig, Tutor: Mylena
+[2025-10-26 15:46:05] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 15:46:11] Serviço adicionado à ID 1: Banho
+[2025-10-26 15:46:12] Serviço adicionado à ID 1: Tosa
+[2025-10-26 15:46:14] Opção de serviço inválida: 6
+[2025-10-26 15:46:21] Opção de menu selecionada: 2
+[2025-10-26 15:46:27] Opção de menu selecionada: 5
+[2025-10-26 15:46:32] Submenu Edição ID 1 - Opção: 1
+[2025-10-26 15:46:38] Telefone do Tutor atualizado. CPF: 12432317939
+[2025-10-26 15:46:46] Email do Tutor atualizado. CPF: 12432317939
+[2025-10-26 15:46:51] Submenu Edição ID 1 - Opção: 2
+[2025-10-26 15:47:04] Dados do Pet atualizados. Nome: Peppa Pig, Nova Raça: Poodle
+[2025-10-26 15:47:07] Submenu Edição ID 1 - Opção: 3
+[2025-10-26 15:47:15] Tentativa de nova data de saída: 2025-10-31
+[2025-10-26 15:47:15] Data de saída atualizada para ID 1: 2025-10-31
+[2025-10-26 15:47:21] Submenu Edição ID 1 - Opção: 0
+[2025-10-26 15:47:24] Opção de menu selecionada: 3
+[2025-10-26 15:47:25] Check-out concluído para ID: 1. Pet: Peppa Pig
+[2025-10-26 15:47:27] Opção de menu selecionada: 6
+[2025-10-26 15:47:27] Aplicação encerrada.
+[2025-10-26 15:47:27] Aplicação encerrada.
+[2025-10-26 15:59:01] Aplicação Hotel PetPet iniciada.
+[2025-10-26 15:59:01] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 15:59:01] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 15:59:01] Funcionário registrado: João
+[2025-10-26 15:59:01] Funcionário registrado: Maria
+[2025-10-26 15:59:01] Funcionário registrado: Graça
+[2025-10-26 15:59:01] Funcionário registrado: Pedro
+[2025-10-26 15:59:01] Aplicação iniciada.
+[2025-10-26 15:59:04] Opção de menu selecionada: 1
+[2025-10-26 15:59:10] Falha na criação de Tutor: CPF inválido: deve conter 11 dígitos numéricos.
+[2025-10-26 15:59:16] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 15:59:21] Telefone do Tutor validado.
+[2025-10-26 15:59:27] Email do Tutor validado.
+[2025-10-26 15:59:40] Idade negativa inserida para Pet: -1
+[2025-10-26 16:00:06] Dados do Pet coletados. Nome: Peppa Pig, Tipo: Cachorro
+[2025-10-26 16:00:15] Data de entrada inserida: 2025-10-28
+[2025-10-26 16:00:18] Data de saída inserida: 2025-10-30
+[2025-10-26 16:00:18] Nova hospedagem criada. Pet: Peppa Pig, Tutor: Evelyn
+[2025-10-26 16:00:18] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 16:00:23] Serviço adicionado à ID 1: Treinamento
+[2025-10-26 16:00:31] Opção de menu selecionada: 6
+[2025-10-26 16:00:31] Aplicação encerrada.
+[2025-10-26 16:00:31] Aplicação encerrada.
+[2025-10-26 16:03:27] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:03:27] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:03:27] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:03:28] Funcionário registrado: João
+[2025-10-26 16:03:28] Funcionário registrado: Maria
+[2025-10-26 16:03:28] Funcionário registrado: Graça
+[2025-10-26 16:03:28] Funcionário registrado: Pedro
+[2025-10-26 16:03:28] Aplicação iniciada.
+[2025-10-26 16:03:33] Opção de menu selecionada: 1
+[2025-10-26 16:03:40] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:03:46] Telefone do Tutor validado.
+[2025-10-26 16:03:57] Email do Tutor validado.
+[2025-10-26 16:04:06] Idade negativa inserida para Pet: -1
+[2025-10-26 16:04:24] Idade do Pet inserida: 12
+[2025-10-26 16:04:34] Dados do Pet coletados. Nome: Kiara, Tipo: Cachorro
+[2025-10-26 16:04:41] Data de entrada inserida: 2025-10-25
+[2025-10-26 16:04:44] Data de saída inserida: 2025-10-26
+[2025-10-26 16:04:44] Nova hospedagem criada. Pet: Kiara, Tutor: Mylena
+[2025-10-26 16:04:44] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 16:04:49] Opção de menu selecionada: 3
+[2025-10-26 16:04:52] Check-out concluído para ID: 1. Pet: Kiara
+[2025-10-26 16:07:06] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:07:06] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:07:06] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:07:06] Funcionário registrado: João
+[2025-10-26 16:07:06] Funcionário registrado: Maria
+[2025-10-26 16:07:06] Funcionário registrado: Graça
+[2025-10-26 16:07:06] Funcionário registrado: Pedro
+[2025-10-26 16:07:06] Aplicação iniciada.
+[2025-10-26 16:07:11] Opção de menu selecionada: 1
+[2025-10-26 16:07:22] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:07:26] Telefone do Tutor validado.
+[2025-10-26 16:07:33] Email do Tutor validado.
+[2025-10-26 16:07:42] Idade negativa inserida para Pet: -1
+[2025-10-26 16:10:05] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:10:05] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:10:05] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:10:05] Funcionário registrado: João
+[2025-10-26 16:10:05] Funcionário registrado: Maria
+[2025-10-26 16:10:05] Funcionário registrado: Graça
+[2025-10-26 16:10:05] Funcionário registrado: Pedro
+[2025-10-26 16:10:05] Aplicação iniciada.
+[2025-10-26 16:10:10] Opção de menu selecionada: 1
+[2025-10-26 16:10:17] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:10:22] Telefone do Tutor validado.
+[2025-10-26 16:10:27] Email do Tutor validado.
+[2025-10-26 16:10:34] Idade negativa inserida para Pet: -1
+[2025-10-26 16:12:21] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:12:21] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:12:21] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:12:21] Funcionário registrado: João
+[2025-10-26 16:12:21] Funcionário registrado: Maria
+[2025-10-26 16:12:21] Funcionário registrado: Graça
+[2025-10-26 16:12:21] Funcionário registrado: Pedro
+[2025-10-26 16:12:21] Aplicação iniciada.
+[2025-10-26 16:12:24] Opção de menu selecionada: 1
+[2025-10-26 16:12:29] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:12:33] Telefone do Tutor validado.
+[2025-10-26 16:12:38] Email do Tutor validado.
+[2025-10-26 16:12:43] Idade negativa inserida para Pet: -1
+[2025-10-26 16:12:50] Idade do Pet inserida: 0
+[2025-10-26 16:13:06] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:13:06] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:13:06] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:13:06] Funcionário registrado: João
+[2025-10-26 16:13:06] Funcionário registrado: Maria
+[2025-10-26 16:13:06] Funcionário registrado: Graça
+[2025-10-26 16:13:06] Funcionário registrado: Pedro
+[2025-10-26 16:13:06] Aplicação iniciada.
+[2025-10-26 16:13:09] Opção de menu selecionada: 1
+[2025-10-26 16:13:16] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:13:19] Telefone do Tutor validado.
+[2025-10-26 16:13:24] Email do Tutor validado.
+[2025-10-26 16:13:34] Idade negativa inserida para Pet: -1
+[2025-10-26 16:13:37] Idade negativa inserida para Pet: -5
+[2025-10-26 16:16:11] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:16:12] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:16:12] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:16:12] Funcionário registrado: João
+[2025-10-26 16:16:12] Funcionário registrado: Maria
+[2025-10-26 16:16:12] Funcionário registrado: Graça
+[2025-10-26 16:16:12] Funcionário registrado: Pedro
+[2025-10-26 16:16:12] Aplicação iniciada.
+[2025-10-26 16:16:18] Opção de menu selecionada: 1
+[2025-10-26 16:16:23] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:16:26] Tentativa de Telefone inválido: 4985135485 | Erro: Telefone inválido: deve conter exatamente 11 dígitos numéricos (com DDD).
+[2025-10-26 16:16:33] Telefone do Tutor validado.
+[2025-10-26 16:16:39] Email do Tutor validado.
+[2025-10-26 16:16:44] Idade negativa inserida para Pet: -1
+[2025-10-26 16:18:16] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:18:16] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:18:16] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:18:16] Funcionário registrado: João
+[2025-10-26 16:18:16] Funcionário registrado: Maria
+[2025-10-26 16:18:16] Funcionário registrado: Graça
+[2025-10-26 16:18:16] Funcionário registrado: Pedro
+[2025-10-26 16:18:16] Aplicação iniciada.
+[2025-10-26 16:18:24] Opção de menu selecionada: 1
+[2025-10-26 16:18:28] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:18:32] Telefone do Tutor validado.
+[2025-10-26 16:18:38] Email do Tutor validado.
+[2025-10-26 16:18:44] Idade negativa inserida para Pet: -1
+[2025-10-26 16:23:55] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:23:55] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:23:55] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:23:55] Funcionário registrado: João
+[2025-10-26 16:23:55] Funcionário registrado: Maria
+[2025-10-26 16:23:55] Funcionário registrado: Graça
+[2025-10-26 16:23:55] Funcionário registrado: Pedro
+[2025-10-26 16:23:55] Aplicação iniciada.
+[2025-10-26 16:23:59] Opção de menu selecionada: 1
+[2025-10-26 16:24:03] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:24:06] Telefone do Tutor validado.
+[2025-10-26 16:24:11] Email do Tutor validado.
+[2025-10-26 16:24:18] Idade negativa inserida para Pet: -1
+[2025-10-26 16:27:02] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:27:03] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:27:03] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:27:03] Funcionário registrado: João
+[2025-10-26 16:27:03] Funcionário registrado: Maria
+[2025-10-26 16:27:03] Funcionário registrado: Graça
+[2025-10-26 16:27:03] Funcionário registrado: Pedro
+[2025-10-26 16:27:03] Aplicação iniciada.
+[2025-10-26 16:27:07] Opção de menu selecionada: 1
+[2025-10-26 16:27:19] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:27:23] Telefone do Tutor validado.
+[2025-10-26 16:27:29] Email do Tutor validado.
+[2025-10-26 16:27:34] Idade negativa inserida para Pet: -1
+[2025-10-26 16:30:40] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:30:40] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:30:40] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:30:40] Funcionário registrado: João
+[2025-10-26 16:30:40] Funcionário registrado: Maria
+[2025-10-26 16:30:40] Funcionário registrado: Graça
+[2025-10-26 16:30:40] Funcionário registrado: Pedro
+[2025-10-26 16:30:40] Aplicação iniciada.
+[2025-10-26 16:30:43] Opção de menu selecionada: 1
+[2025-10-26 16:30:50] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:30:53] Telefone do Tutor validado.
+[2025-10-26 16:31:01] Email do Tutor validado.
+[2025-10-26 16:31:06] Idade negativa inserida para Pet: -1
+[2025-10-26 16:33:29] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:33:29] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:33:29] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:33:29] Funcionário registrado: João
+[2025-10-26 16:33:29] Funcionário registrado: Maria
+[2025-10-26 16:33:29] Funcionário registrado: Graça
+[2025-10-26 16:33:29] Funcionário registrado: Pedro
+[2025-10-26 16:33:29] Aplicação iniciada.
+[2025-10-26 16:33:33] Opção de menu selecionada: 1
+[2025-10-26 16:33:37] Falha na criação de Tutor: CPF inválido: deve conter 11 dígitos numéricos.
+[2025-10-26 16:33:42] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:33:49] Telefone do Tutor validado.
+[2025-10-26 16:33:56] Email do Tutor validado.
+[2025-10-26 16:33:59] Idade negativa inserida para Pet: -1
+[2025-10-26 16:36:13] Aplicação Hotel PetPet iniciada.
+[2025-10-26 16:36:13] Hotel 'Hotel PetPet Central' inicializado.
+[2025-10-26 16:36:13] Controller inicializado. Carregando dados iniciais.
+[2025-10-26 16:36:13] Funcionário registrado: João
+[2025-10-26 16:36:13] Funcionário registrado: Maria
+[2025-10-26 16:36:13] Funcionário registrado: Graça
+[2025-10-26 16:36:13] Funcionário registrado: Pedro
+[2025-10-26 16:36:13] Aplicação iniciada.
+[2025-10-26 16:36:22] Opção de menu selecionada: 1
+[2025-10-26 16:36:28] Falha na criação de Tutor: CPF inválido: deve conter 11 dígitos numéricos.
+[2025-10-26 16:36:33] Nome e CPF do Tutor coletados com sucesso.
+[2025-10-26 16:36:37] Telefone do Tutor validado.
+[2025-10-26 16:36:41] Email do Tutor validado.
+[2025-10-26 16:36:46] Input inválido (não-numérico) para idade do Pet.
+[2025-10-26 16:36:50] Idade negativa inserida para Pet: -2
+[2025-10-26 16:37:02] Idade do Pet inserida: 12
+[2025-10-26 16:37:11] Dados do Pet coletados. Nome: thor, Tipo: Cachorro
+[2025-10-26 16:37:15] Data de entrada inserida: 2025-10-25
+[2025-10-26 16:37:19] Data de saída inserida: 2025-10-30
+[2025-10-26 16:37:19] Nova hospedagem criada. Pet: thor, Tutor: my
+[2025-10-26 16:37:19] Nova Hospedagem ID 1 inicializada com diária R$65.0.
+[2025-10-26 16:37:25] Opção de menu selecionada: 6
+[2025-10-26 16:37:25] Aplicação encerrada.
+[2025-10-26 16:37:25] Aplicação encerrada.

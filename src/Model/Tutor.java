@@ -10,6 +10,15 @@ public class Tutor extends Pessoa {
         super(nome, cpf);
         this.pets = new ArrayList<>();
     }
+    
+    // Você pode usar este construtor para criar o Tutor já com email e telefone:
+    public Tutor(String nome, String cpf, String telefone, String email) {
+        super(nome, cpf);
+        setTelefone(telefone); // Usa o setter validado da classe Pessoa
+        setEmail(email);       // Usa o setter validado da classe Pessoa
+        this.pets = new ArrayList<>();
+    }
+
 
     public void adicionarPet(Pet pet) {
         this.pets.add(pet);

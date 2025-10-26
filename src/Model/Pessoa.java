@@ -1,7 +1,5 @@
 package Model;
 
-import Util.Logger; // Importa a classe Logger
-
 public abstract class Pessoa {
     private String nome;
     private String cpf;
@@ -10,10 +8,8 @@ public abstract class Pessoa {
 
     public Pessoa(String nome, String cpf) {
         
-        
+        // Lógica de limpeza do CPF (já existente)
         StringBuilder cpfDigitos = new StringBuilder(); 
-        
-        // Remove caracteres não numéricos do CPF
         for (char c : cpf.toCharArray()) {
             if (Character.isDigit(c)) {
                 cpfDigitos.append(c); 
@@ -22,18 +18,13 @@ public abstract class Pessoa {
         
         String cpfLimpo = cpfDigitos.toString();
         
-        // Validação básica do CPF (apenas contagem de dígitos)
         if (cpfLimpo.length() != 11) {
-            // Log de Erro Crítico: Falha na validação do CPF
-            Logger.log("ERROR", "Tentativa de criar Pessoa com CPF inválido: " + cpf);
             throw new IllegalArgumentException("CPF inválido: deve conter 11 dígitos numéricos.");
         }
    
         
         this.nome = nome;
-        this.cpf = cpfLimpo;
-        // Log de Evento: Criação bem-sucedida
-        Logger.log("EVENT", "Pessoa criada com sucesso. Nome: " + nome + ", CPF: " + cpfLimpo);
+        this.cpf = cpfLimpo; 
     }
 
     public String getNome() {
@@ -44,26 +35,35 @@ public abstract class Pessoa {
         return cpf;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
+	public String getTelefone() {
+		return telefone;
+	}
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+	// NOVO: Validação do Telefone (11 dígitos numéricos)
+	public void setTelefone(String telefone) {
+	    // Remove quaisquer espaços, parênteses ou traços para a validação
+	    String telefoneLimpo = telefone.replaceAll("[^0-9]", "");
+	    
+	    if (telefoneLimpo.length() != 11) {
+	        throw new IllegalArgumentException("Telefone inválido: deve conter exatamente 11 dígitos numéricos (com DDD).");
+	    }
+	    
+		this.telefone = telefoneLimpo;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	// NOVO: Validação do Email (formato básico)
+	public void setEmail(String email) {
+	    // Expressão regular básica para formato de e-mail (ex: algo@dominio.com)
+	    if (!email.matches("^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$")) {
+	        throw new IllegalArgumentException("E-mail inválido: utilize o formato padrao (ex: nome@dominio.com).");
+	    }
+	    
+		this.email = email;
+	}
     
-    /**
-     * Retorna uma string com informações detalhadas da pessoa.
-     * Deve ser implementado pelas subclasses (Tutor, Funcionario).
-     * @return String com as informações
-     */
     public abstract String getInfo();
 }
