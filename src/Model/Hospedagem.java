@@ -14,21 +14,25 @@ public class Hospedagem implements ServicosAdd {
     private int id;
     private double valorDiaria;
 
+    //Impede a data de saída ser maior que a entrada
     public Hospedagem(Pet pet, Tutor tutor, LocalDate dataEntrada, LocalDate dataSaida) {
         if (dataEntrada.isAfter(dataSaida) || dataEntrada.isEqual(dataSaida)) {
             throw new IllegalArgumentException("A data de entrada deve ser anterior à data de saída.");
         }
+        
         this.pet = pet;
         this.tutor = tutor;
         this.dataEntrada = dataEntrada;
         this.dataSaida = dataSaida;
         this.servicosExtras = new ArrayList<>();
     }
-
+    
+    //Consta o número de dias entre as datas
     public int getDias() {
         return (int) ChronoUnit.DAYS.between(dataEntrada, dataSaida);
     }
 
+    //Adição e remoção de serviços extra
     @Override
     public void adicionarServico(Servico servico) {
         servicosExtras.add(servico);
@@ -38,6 +42,7 @@ public class Hospedagem implements ServicosAdd {
         servicosExtras.remove(servico);
     }
     
+    //Calcula total da estadia
     public double calcularValorTotal() {
         double valorEstadia = this.valorDiaria * getDias();
         
@@ -69,11 +74,9 @@ public class Hospedagem implements ServicosAdd {
         return dataSaida;
     }
     
-    // NOVO MÉTODO (O SETTER QUE ESTAVA FALTANDO!)
     public void setDataSaida(LocalDate dataSaida) {
         this.dataSaida = dataSaida;
     }
-    // ---------------------------------------------
 
     public double getValorDiaria() {
         return valorDiaria;

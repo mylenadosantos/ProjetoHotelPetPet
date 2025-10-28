@@ -13,16 +13,13 @@ public class HotelController {
         this.hotel = new Hotel("Hotel PetPet Central");
         this.view = view;
    
-        // Log: Inicialização do Controller
         Logger.log("INFO", "Controller inicializado. Carregando dados iniciais."); //
    
-        // Inicializa o catálogo de serviços e funcionários
         Funcionario funcBanho = new Funcionario("João", "99988877766", "Esteticista", 2000.0, 0.0);
         Funcionario funcTosa = new Funcionario("Maria", "11122233344", "Tosador", 3500.0, 0.0);
         Funcionario funcVet = new Funcionario("Graça", "89034567843", "Veterinária", 4500.0, 0.0);
         Funcionario funcTreinador = new Funcionario("Pedro", "44455566677", "Treinador", 3000.0, 0.0);
         
-        // O Model já loga o registro de funcionário
         this.hotel.registrarFuncionario(funcBanho);
         this.hotel.registrarFuncionario(funcTosa);
         this.hotel.registrarFuncionario(funcVet);
@@ -42,7 +39,7 @@ public class HotelController {
     }
 
     public void iniciarAplicacao() {
-        Logger.log("INFO", "Aplicação iniciada."); // Log de Início da Aplicação
+        Logger.log("INFO", "Aplicação iniciada."); 
         
         this.view.exibirMensagemBoasVindas();
         int opcao = -1;
@@ -51,7 +48,7 @@ public class HotelController {
             opcao = this.view.pedirOpcaoMenu();
             
             if (opcao != -1) {
-                Logger.log("INFO", "Opção de menu selecionada: " + opcao); // Log de Seleção de Menu
+                Logger.log("INFO", "Opção de menu selecionada: " + opcao); 
             }
 
             switch (opcao) {
@@ -67,17 +64,17 @@ public class HotelController {
                 case 4: 
                     adicionarServicosExistente();
                     break;
-                case 5: // Editar Hospedagem
+                case 5:
                     editarHospedagem();
                     break;
                 case 6: 
                     this.view.exibirMensagem("Obrigado por usar o sistema. Até logo!");
-                    Logger.log("INFO", "Aplicação encerrada."); // Log de Encerramento
+                    Logger.log("INFO", "Aplicação encerrada."); 
                     break;
                 default:
                     if (opcao != -1) {
                         this.view.exibirErro("Opção inválida.");
-                        Logger.log("WARN", "Opção de menu inválida digitada: " + opcao); // Log de Alerta
+                        Logger.log("WARN", "Opção de menu inválida digitada: " + opcao);
                     }
                     break;
             }
@@ -95,12 +92,11 @@ public class HotelController {
         while (tutor == null) { 
             try {
                 String cpfTutor = this.view.pedirString("CPF do Tutor (apenas números, 11 dígitos): ");
-                tutor = new Tutor(nomeTutor, cpfTutor); // O MODELO (Pessoa/Tutor) já valida o CPF
+                tutor = new Tutor(nomeTutor, cpfTutor); 
                 Logger.log("USER", "Nome e CPF do Tutor coletados com sucesso.");
                 
             } catch (IllegalArgumentException e) { 
                 this.view.exibirErro(e.getMessage()); 
-                // O Logger de ERRO já está no construtor de Pessoa. Aqui só alertamos.
                 Logger.log("WARN", "Falha na criação de Tutor: " + e.getMessage()); 
             }
         }
@@ -110,8 +106,8 @@ public class HotelController {
         do {
             String telefoneTutor = this.view.pedirString("Telefone do Tutor (11 dígitos, ex: 11987654321): ");
             try {
-                tutor.setTelefone(telefoneTutor); // Tenta validar o telefone (lógica está em Pessoa.java)
-                telefoneValido = true; // Se não lançou exceção, é válido
+                tutor.setTelefone(telefoneTutor); 
+                telefoneValido = true; 
                 Logger.log("USER", "Telefone do Tutor validado.");
             } catch (IllegalArgumentException e) {
                 this.view.exibirErro(e.getMessage());
@@ -124,8 +120,8 @@ public class HotelController {
         do {
             String emailTutor = this.view.pedirString("Email do Tutor (formato nome@dominio.com): ");
             try {
-                tutor.setEmail(emailTutor); // Tenta validar o email (lógica está em Pessoa.java)
-                emailValido = true; // Se não lançou exceção, é válido
+                tutor.setEmail(emailTutor);
+                emailValido = true; 
                 Logger.log("USER", "Email do Tutor validado.");
             } catch (IllegalArgumentException e) {
                 this.view.exibirErro(e.getMessage());
@@ -143,7 +139,6 @@ public class HotelController {
             try {
                 idadePet = this.view.pedirInteiro("Idade do Pet (apenas números inteiros): ");
                 
-                // só entra aqui se o input for numérico
                 if (idadePet < 0) {
                     this.view.exibirErro("A idade do Pet não pode ser um número negativo.");
                     Logger.log("WARN", "Idade negativa inserida para Pet: " + idadePet);
@@ -153,11 +148,9 @@ public class HotelController {
                 }
 
             } catch (IllegalArgumentException e) {
-                // Se o usuário digitar "dez", vem pra cá
                 this.view.exibirErro("Entrada inválida. Por favor, digite um número inteiro.");
                 Logger.log("WARN", "Input inválido (não-numérico) para idade do Pet.");
                 
-                // pula o resto do loop e pede de novo
                 continue;
             }
         }
@@ -172,11 +165,11 @@ public class HotelController {
                 
                 if (tipoPetOpcao != 1 && tipoPetOpcao != 2) {
                     this.view.exibirErro("Opção de tipo de pet inválida. Digite 1 ou 2.");
-                    Logger.log("WARN", "Opção de Pet inválida inserida: " + tipoPetOpcao); // Log: Opção de Pet inválida
+                    Logger.log("WARN", "Opção de Pet inválida inserida: " + tipoPetOpcao); 
                 }
             } catch (IllegalArgumentException e) {
                  this.view.exibirErro(e.getMessage());
-                 Logger.log("WARN", "Input inválido (não-numérico) para tipo de Pet."); // Log: Input não numérico
+                 Logger.log("WARN", "Input inválido (não-numérico) para tipo de Pet."); 
                  tipoPetOpcao = -1; 
             }
         }
@@ -188,7 +181,7 @@ public class HotelController {
             pet = new Gato(nomePet, idadePet);
         }
         
-        // 3. PERGUNTAS AO PET (Coleta de dados)
+        // 3. Perguntas sobre o pet
         String racaPet = this.view.pedirString("Raça do Pet: ");
         pet.setRaca(racaPet);
         
@@ -253,14 +246,14 @@ public class HotelController {
         }
 
 
-        // 5. Criação da Hospedagem - O MODELO JÁ LOGA O EVENTO DE CRIAÇÃO
+        // 5. Criação da Hospedagem
         Hospedagem novaHospedagem = this.hotel.criarHospedagem(pet, tutor, entrada, saida);
         novaHospedagem.setValorDiaria(65.0);
         novaHospedagem.setId(this.hotel.getHospedagensAtivas().size()); 
         
         Logger.log("INFO", "Nova Hospedagem ID " + novaHospedagem.getId() + " inicializada com diária R$65.0.");
 
-        // 6. ADICIONAR MÚLTIPLOS SERVIÇOS EM LOOP (Lógica de interação com o usuário)
+        // 6. Serviço em Loop
         if (!this.hotel.getServicosDisponiveis().isEmpty()) {
 
             this.view.exibirListaServicosDisponiveis(this.hotel.getServicosDisponiveis());
@@ -296,9 +289,7 @@ public class HotelController {
         this.view.exibirRelatorioHospedagem(novaHospedagem);
     }
 
-    // =========================================================================
-    // MÉTODOS AUXILIARES
-    // =========================================================================
+ 
     private void exibirHospedagensAtivas() {
         if (this.hotel.getHospedagensAtivas().isEmpty()) {
             this.view.exibirMensagem("\nNão há hospedagens ativas no momento.");
@@ -313,7 +304,7 @@ public class HotelController {
         }
     }
     
-    // MÉTODO AUXILIAR para adicionar serviços a uma hospedagem que já está ativa (OPÇÃO 4)
+    //Add serviço a uma hospedagem ativa
     private void adicionarServicosExistente() {
         this.view.exibirMensagem("\n--- ADICIONAR SERVIÇOS A HOSPEDAGEM ATIVA ---");
         
@@ -386,7 +377,7 @@ public class HotelController {
         this.view.exibirRelatorioHospedagem(hospedagemParaAtualizar);
     }
     
-    // MÉTODO para Finalizar Hospedagem (Check-out) - OPÇÃO 3
+    //Finalizar hospedagens ativas
     private void finalizarHospedagem() {
         this.view.exibirMensagem("\n--- FINALIZAR HOSPEDAGEM (Check-out) ---");
         
@@ -414,7 +405,7 @@ public class HotelController {
 
                 if (hospedagemFinal != null) {
                     this.view.exibirRelatorioHospedagem(hospedagemFinal);
-                    sucesso = this.hotel.finalizarHospedagem(idParaFinalizar); // O MODELO já loga o sucesso/falha
+                    sucesso = this.hotel.finalizarHospedagem(idParaFinalizar);
 
                     if (sucesso) {
                         this.view.exibirMensagem("\n--- CHECK-OUT CONCLUÍDO ---");
@@ -422,20 +413,18 @@ public class HotelController {
                     
                 } else {
                     this.view.exibirErro("ID " + idParaFinalizar + " não encontrado. Tente novamente.");
-                    Logger.log("WARN", "Tentativa de check-out com ID não encontrado: " + idParaFinalizar); // Log: ID não encontrado
+                    Logger.log("WARN", "Tentativa de check-out com ID não encontrado: " + idParaFinalizar);
                 }
                 
             } catch (IllegalArgumentException e) {
                 this.view.exibirErro(e.getMessage());
-                Logger.log("WARN", "Input inválido (não-numérico) para ID de check-out."); // Log: Input não numérico
+                Logger.log("WARN", "Input inválido (não-numérico) para ID de check-out.");
                 idParaFinalizar = -1;
             }
         }
     }
     
-    // =========================================================================
-    // MÉTODO para Editar/Atualizar Dados da Hospedagem (OPÇÃO 5)
-    // =========================================================================
+    //Atualizar dados de hospedagens ativas
     private void editarHospedagem() {
         this.view.exibirMensagem("\n--- EDITAR DADOS DA HOSPEDAGEM ---");
         
@@ -449,7 +438,7 @@ public class HotelController {
         int idParaEditar = -1;
         Hospedagem hospedagem = null;
         
-        // Loop de validação para garantir que o ID seja um número e exista
+        // Loop para garantir que o ID seja um número que existe
         while (hospedagem == null) {
             try {
                 idParaEditar = this.view.pedirInteiro("Digite o ID da hospedagem para editar: ");
@@ -463,16 +452,16 @@ public class HotelController {
                 
                 if (hospedagem == null) {
                     this.view.exibirErro("ID não encontrado.");
-                    Logger.log("WARN", "Tentativa de editar com ID não encontrado: " + idParaEditar); // Log: ID não encontrado
+                    Logger.log("WARN", "Tentativa de editar com ID não encontrado: " + idParaEditar); 
                 }
                 
             } catch (IllegalArgumentException e) {
                 this.view.exibirErro(e.getMessage());
-                Logger.log("WARN", "Input inválido (não-numérico) para ID de edição."); // Log: Input não numérico
+                Logger.log("WARN", "Input inválido (não-numérico) para ID de edição."); 
             }
         }
         
-        // 2. Apresenta o Submenu de Edição
+       
         int opcaoEdicao = -1;
         while (opcaoEdicao != 0) {
             this.view.exibirMensagem("\n--- EDITAR HOSPEDAGEM ID: " + hospedagem.getId() + " ---");
@@ -481,16 +470,16 @@ public class HotelController {
             this.view.exibirMensagem("3. Alterar Data de Saída");
             this.view.exibirMensagem("0. Finalizar Edição");
             
-            // Captura o erro aqui para garantir repetição
+            // Captura o erro
             try {
                 opcaoEdicao = this.view.pedirInteiro("Escolha o campo para editar: ");
-                Logger.log("INFO", "Submenu Edição ID " + hospedagem.getId() + " - Opção: " + opcaoEdicao); // Log: Opção de edição
+                Logger.log("INFO", "Submenu Edição ID " + hospedagem.getId() + " - Opção: " + opcaoEdicao); 
                 
             } catch (IllegalArgumentException e) {
                 this.view.exibirErro(e.getMessage());
-                Logger.log("WARN", "Input inválido (não-numérico) para opção de edição."); // Log: Input não numérico
-                opcaoEdicao = -1; // Garante que o loop repita
-                continue; // Volta ao início do while
+                Logger.log("WARN", "Input inválido (não-numérico) para opção de edição."); 
+                opcaoEdicao = -1; 
+                continue; 
             }
             
             switch (opcaoEdicao) {
@@ -514,7 +503,7 @@ public class HotelController {
         }
     }
     
-    // Sub-método para editar dados do Tutor
+    // Editar dados do tutor
     private void editarTutor(Tutor tutor) {
         this.view.exibirMensagem("\n--- EDITANDO TUTOR: " + tutor.getNome() + " ---");
         
@@ -551,13 +540,12 @@ public class HotelController {
         this.view.exibirMensagem("Dados do Tutor atualizados com sucesso!");
     }
     
-    // Sub-método para editar dados do Pet
+    // Editar dados do PET
     private void editarPet(Pet pet) {
         this.view.exibirMensagem("\n--- EDITANDO PET: " + pet.getNome() + " ---");
         String novaRaca = this.view.pedirString("Nova Raça (" + pet.getRaca() + "): ");
         pet.setRaca(novaRaca);
         
-        // ... Lógica de Dieta e Remédios ...
         String temDieta = this.view.pedirString("Pet possui Dieta Específica (s/n)? ").toLowerCase();
         if (temDieta.equals("s")) {
             pet.setDieta(this.view.pedirString("Descreva a Nova Dieta: "));
@@ -575,30 +563,27 @@ public class HotelController {
         Logger.log("EVENT", "Dados do Pet atualizados. Nome: " + pet.getNome() + ", Nova Raça: " + novaRaca); 
     }
     
-    // Sub-método para alterar a Data de Saída
+    //Alterar dados
     private void alterarDataSaida(Hospedagem hospedagem) {
         LocalDate novaSaida = null;
         LocalDate entrada = hospedagem.getDataEntrada();
         
         while (novaSaida == null || !novaSaida.isAfter(entrada)) {
             try {
-                // Pede a nova data de saída
                 novaSaida = this.view.pedirData("Nova Data de Saída (Atual: " + hospedagem.getDataSaida() + ")");
-                Logger.log("USER", "Tentativa de nova data de saída: " + novaSaida); // Log: Tentativa de data
+                Logger.log("USER", "Tentativa de nova data de saída: " + novaSaida); 
 
-                // Se for válida, checa a regra de negócio (Saída > Entrada)
                 if (novaSaida != null && !novaSaida.isAfter(entrada)) {
                     this.view.exibirErro("A nova data de saída deve ser posterior à data de entrada (" + entrada + ").");
-                    Logger.log("WARN", "Tentativa de data inválida (anterior à entrada): " + novaSaida); // Log: Regra falhou
+                    Logger.log("WARN", "Tentativa de data inválida (anterior à entrada): " + novaSaida); 
                 } else if (novaSaida != null) {
-                    // Se for válida e posterior à entrada, atualiza o Model
                     hospedagem.setDataSaida(novaSaida);
                     this.view.exibirMensagem("Data de saída atualizada com sucesso!");
-                    Logger.log("EVENT", "Data de saída atualizada para ID " + hospedagem.getId() + ": " + novaSaida); // Log: Sucesso
+                    Logger.log("EVENT", "Data de saída atualizada para ID " + hospedagem.getId() + ": " + novaSaida); 
                 }
             } catch (IllegalArgumentException e) {
                 this.view.exibirErro(e.getMessage());
-                Logger.log("WARN", "Formato de data inválido para alteração de saída."); // Log: Formato de data inválido
+                Logger.log("WARN", "Formato de data inválido para alteração de saída."); 
             }
         }
     }

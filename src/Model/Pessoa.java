@@ -8,7 +8,7 @@ public abstract class Pessoa {
 
     public Pessoa(String nome, String cpf) {
         
-        // Lógica de limpeza do CPF (já existente)
+        // Lógica de limpeza do CPF
         StringBuilder cpfDigitos = new StringBuilder(); 
         for (char c : cpf.toCharArray()) {
             if (Character.isDigit(c)) {
@@ -39,7 +39,7 @@ public abstract class Pessoa {
 		return telefone;
 	}
 
-	// NOVO: Validação do Telefone (11 dígitos numéricos)
+	// Validação do Telefone (11 dígitos numéricos)
 	public void setTelefone(String telefone) {
 	    // Remove quaisquer espaços, parênteses ou traços para a validação
 	    String telefoneLimpo = telefone.replaceAll("[^0-9]", "");
@@ -55,7 +55,7 @@ public abstract class Pessoa {
 		return email;
 	}
 
-	// NOVO: Validação do Email (formato básico)
+	// NValidação do Email (formato básico)
 	public void setEmail(String email) {
 	    // Expressão regular básica para formato de e-mail (ex: algo@dominio.com)
 	    if (!email.matches("^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$")) {

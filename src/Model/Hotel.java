@@ -1,13 +1,14 @@
 package Model;
 
-import Util.Logger; // Importa a classe Logger
+import Util.Logger;
 import java.time.LocalDate;
-// Importando as classes necessárias para Collections
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap; 
 
+	//Classe principal: gerencia e armazena listas importantes e regras de negócios (criar,
+	//buscar, etc)
 public class Hotel {
     private String nome;
     private List<Hospedagem> hospedagensAtivas;
@@ -42,7 +43,6 @@ public class Hotel {
     }
 
     public Hospedagem criarHospedagem(Pet pet, Tutor tutor, LocalDate dataEntrada, LocalDate dataSaida) {
-        // Tratamento de exceção duplicado para garantir o log antes do throw
         if (dataEntrada.isAfter(dataSaida) || dataEntrada.isEqual(dataSaida)) {
             Logger.log("WARN", "Tentativa de criar Hospedagem com datas inválidas: " + dataEntrada + " a " + dataSaida);
             throw new IllegalArgumentException("A data de entrada deve ser anterior à data de saída.");
@@ -91,20 +91,18 @@ public class Hotel {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+    
+    //Adiciona hospedagem a lista ativa
 
     public void registrarHospedagem(Hospedagem hospedagem) {
         this.hospedagensAtivas.add(hospedagem);
     }
     
-    /**
-     * Lógica de Negócio: Finaliza a hospedagem (Check-out) e a remove da lista ativa.
-     * @param idHospedagem O ID da hospedagem a ser finalizada.
-     * @return true se a hospedagem foi removida, false caso contrário.
-     */
+    
     public boolean finalizarHospedagem(int idHospedagem) {
         Hospedagem hospedagemParaRemover = null;
-        // Percorre a lista para encontrar a hospedagem pelo ID
-        for (Hospedagem h : hospedagensAtivas) {
+      //Encontra a hospedagem pelo ID para remover
+        	for (Hospedagem h : hospedagensAtivas) {
             if (h.getId() == idHospedagem) {
                 hospedagemParaRemover = h;
                 break;
@@ -115,13 +113,12 @@ public class Hotel {
             // Remove a hospedagem ativa
             boolean sucesso = hospedagensAtivas.remove(hospedagemParaRemover);
             if (sucesso) {
-                // Log de Evento: Sucesso no check-out
                 Logger.log("EVENT", "Check-out concluído para ID: " + idHospedagem + ". Pet: " + hospedagemParaRemover.getPet().getNome());
             }
             return sucesso;
         }
         
-        // Log de Alerta: Tentativa de finalizar hospedagem inexistente
+        // Retorna erro quando há tentativa de finalizar hospedagem inexistente
         Logger.log("WARN", "Tentativa de finalizar hospedagem com ID não encontrado: " + idHospedagem);
         return false;
     }
