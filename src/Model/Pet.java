@@ -4,7 +4,7 @@ import Util.Logger;
 
 public abstract class Pet {
     private String nome;
-    private int idade; // Idade em anos (0 para filhotes com menos de 1 ano)
+    private int idade;
     private String raca;
     private Tutor tutor;
     private boolean vacinacao;
@@ -12,14 +12,10 @@ public abstract class Pet {
     private boolean cooperativo;
     private String remedios; 
 
-    // O construtor é o melhor lugar para validar os dados iniciais.
     public Pet(String nome, int idade) {
         
-        // TRATAMENTO DE EXCEÇÃO AQUI: Idade não pode ser um número negativo.
         if (idade < 0) { 
-            // 1. Registra o erro no log.txt antes de interromper o programa
             Logger.log("ERROR", "Tentativa de criar Pet com idade negativa: " + idade);
-            // 2. Lança uma exceção para evitar que um objeto Pet inválido seja criado
             throw new IllegalArgumentException("A idade do Pet não pode ser um número negativo.");
         }
         

@@ -8,10 +8,12 @@ import java.util.Scanner;
 import Model.Hospedagem; 
 import Model.Servico; 
 
+//Responsável pela interação com o usuário
 
 public class HotelView {
     
     private Scanner scanner;
+    // Define um formatador padrão para garantir que as datas sejam lidas e exibidas consistentemente.
     private final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public HotelView() {
@@ -19,6 +21,7 @@ public class HotelView {
     }
 
   
+   //Exibe o menu principal para o usuario
     public int pedirOpcaoMenu() {
         System.out.println("\n--- MENU PRINCIPAL ---");
         System.out.println("1. Registrar nova Hospedagem");
@@ -29,7 +32,6 @@ public class HotelView {
         System.out.println("6. Sair");
         System.out.print("Escolha uma opção: ");
         
-        // CORREÇÃO: Bloco try/catch restaurado
         try { 
             int opcao = scanner.nextInt();
             scanner.nextLine(); 
@@ -37,7 +39,7 @@ public class HotelView {
         } catch (InputMismatchException e) {
             scanner.nextLine(); 
             exibirErro("Entrada inválida. Por favor, digite um número.");
-            return -1; 
+            return -1; // Retorna um valor inválido para o Controller tratar
         }
     }
 
@@ -47,32 +49,36 @@ public class HotelView {
         return scanner.nextLine();
     }
     
-    // Mostra a mensagem pro usuário no console (ex: "Digite a idade:")
+    
+     // Solicita um número inteiro ao usuário.
+     // Se o usuário digitar algo que não seja um inteiro, este método
+     // lança uma exceção para ser tratada pelo Controller.
+    
     public int pedirInteiro(String mensagem) {
         System.out.print(mensagem);
         try {
-        	// Tenta ler o número digitado pelo usuário
             int valor = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); 
             return valor;
         } catch (InputMismatchException e) {
-            scanner.nextLine();
-         // Lança um erro dizendo que o que ele digitou não é um número inteiro
+            scanner.nextLine(); 
             throw new IllegalArgumentException("Entrada inválida. Por favor, digite um número inteiro.");
         }
     }
 
 
    
-    // MÉTODO PEDIR DATA CORRIGIDO: Lança exceção para o Controller tratar
+  
+    // Solicita uma data ao usuário no formato DD/MM/AAAA.
+    // Se o formato estiver incorreto, lança uma exceção para ser tratada pelo Controller.
+    
     public LocalDate pedirData(String mensagem) {
         System.out.print(mensagem + " (formato DD/MM/AAAA): ");
         String dataStr = scanner.nextLine();
         try {
-            // Se a data for válida, retorna.
             return LocalDate.parse(dataStr, DATE_FORMAT);
         } catch (Exception e) {
-            // Se falhar (formato errado), LANÇA A EXCEÇÃO.
+            // Retorna o  erro de formato para o Controller
             throw new IllegalArgumentException("Formato de data inválido. Tente novamente.");
         }
     }
@@ -86,6 +92,9 @@ public class HotelView {
     }
 
     
+    
+     // Formata e exibe os dados da Hospedagem
+     
     public void exibirRelatorioHospedagem(Hospedagem h) { 
         System.out.println("\n--- DETALHES DA HOSPEDAGEM ---");
         System.out.println("ID: " + h.getId());
@@ -103,6 +112,7 @@ public class HotelView {
             }
         }
 
+        // Chama o método de calcular da Model
         System.out.printf("\nVALOR TOTAL A PAGAR: R$%.2f\n", h.calcularValorTotal());
         System.out.println("-------------------------------------");
     }
@@ -123,6 +133,9 @@ public class HotelView {
     }
 
   
+    
+   //  Centraliza a exibição de mensagens de erro.
+
     public void exibirErro(String mensagem) {
         System.err.println("\n--- ERRO ---");
         System.err.println("Ocorreu um erro: " + mensagem);
@@ -130,6 +143,7 @@ public class HotelView {
     }
 
    
+     
     public void fechar() {
         if (scanner != null) {
             scanner.close();
